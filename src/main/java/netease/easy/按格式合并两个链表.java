@@ -74,7 +74,7 @@ public class 按格式合并两个链表 {
             res.add(li.next());
         }
 
-        //重新搞一下next地址
+        //重新设置一下next地址
         Node prev = null;
         for(Node n : res){
             if(prev != null){
