@@ -1,4 +1,4 @@
-package netease.easy;
+package netease.hard;
 
 import java.util.*;
 
