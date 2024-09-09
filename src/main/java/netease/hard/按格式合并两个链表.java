@@ -103,15 +103,17 @@ public class 按格式合并两个链表 {
         }
         return longer;
     }
-}
 
-class Node{
-    String addr;
-    String value;
-    String next;
-    Node(String a, String b , String c){
-        addr = a;
-        value = b;
-        next = c;
+    static class Node{
+        String addr;
+        String value;
+        String next;
+        Node(String a, String b , String c){
+            addr = a;
+            value = b;
+            next = c;
+        }
     }
 }
+
+

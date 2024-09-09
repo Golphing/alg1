@@ -45,35 +45,37 @@ public class 按公因数计算最大组件大小 {
         }
         System.out.println(maxV);
     }
-}
 
-class UnionA{
-    public int[] parents;
+    static class UnionA{
+        public int[] parents;
 
-    UnionA(int max){
-        parents = new int[max+1];
-        for(int i=0;i<=max;i++){
-            parents[i] =  i;
+        UnionA(int max){
+            parents = new int[max+1];
+            for(int i=0;i<=max;i++){
+                parents[i] =  i;
+            }
+        }
+
+        public int find(int x){
+            if(parents[x] != x){
+                parents[x] = find(parents[x]);
+            }
+            return parents[x];
+            // int node = x;
+            // while(parents[node] != node){
+            //     // System.out.println("node: " + node);
+            //     node = parents[node];
+            // }
+            // parents[x] = node;
+            // return node;
+        }
+
+        public void union(int x, int y){
+            int px = find(x);
+            int py = find(y);
+            parents[px] = py;
         }
     }
-
-    public int find(int x){
-        if(parents[x] != x){
-            parents[x] = find(parents[x]);
-        }
-        return parents[x];
-        // int node = x;
-        // while(parents[node] != node){
-        //     // System.out.println("node: " + node);
-        //     node = parents[node];
-        // }
-        // parents[x] = node;
-        // return node;
-    }
-
-    public void union(int x, int y){
-        int px = find(x);
-        int py = find(y);
-        parents[px] = py;
-    }
 }
+
+
