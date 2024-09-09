@@ -3,6 +3,11 @@ package netease.hard;
 import java.util.Scanner;
 
 /**
+ * 给你一个整数数组 perm ，它是前 n 个正整数（1,2,3,4,5,…,n-1,n 共n个正整数）的排列，且 n 是个奇数 。
+ * 它被加密成另一个长度为 n-1 的整数数组 encoded ，满足 encoded[i] = perm[i] XOR perm[i+1]。比方说，如果 perm=[1,3,2] ，那么 encoded=[2,1]。
+ * 给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。
+ *
+ *
  * 思路：
  *      因为是奇数个，所以我们能够基于encoded获取到除第一个数据所有数据异或的结果，然后能够得到其他所有的数据的异或结果。两个再异或就是第一个元素的值，然后基于第一个数据的值能够得到其他所有的值。
  * 记录易错点
@@ -23,6 +28,7 @@ public class 解码异或后的排列 {
             for(int i=0;i<a.length;i++){
                 b[i] = Integer.valueOf(a[i]);
             }
+            //获取原始数组
             int[] ret = getPerm(b);
             StringBuilder r = new StringBuilder();
             for(int i=0;i<ret.length;i++){

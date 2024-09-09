@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
+ * 给定一个由不同正整数组成的非空数组 nums，考虑下面的构图：
+ * 有 nums.length 个节点，按照从 nums[0]到 nums[nums.length-1]标记；
+ * 只有当 nums[i] 和 nums[j] 共用一个大于 1 的公因数时，nums[i] 和 nums[j] 之间才有一条边。
+ * 返回构图中最大连通组件的大小。
+ *
  * 思路：
  *     1、构建一个并查集的类，里面有个数组 parents[],代表每个元素的父节点，初始化都是自己。数组长度为输入数组里max+1(因为还有数组下标0)
  *          里面实现两个方法，一个是查找元素的父节点，一个是合并两个元素的父节点
@@ -16,7 +21,7 @@ import java.util.Scanner;
  * 记录不记得的API
  *          int max = Arrays.stream(nums).max().getAsInt();
  */
-public class 按公因数计算最大组件大小 {
+public class 按公因数计算最大组件大小h {
     public static void main(String[] args) {
         String[] split = new Scanner(System.in).nextLine().split(" ");
         int[] nums = new int[split.length];
