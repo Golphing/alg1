@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68e4c93b-3cc3-437c-9b90-326dcbb9b789" name="Default" comment="add">
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/hard/无重复字符的最长子串.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/hard/最多能完成排序的块.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/hard/最长超赞子字符串.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netease/hard/不相交的线.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/hard/不相交的线.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netease/hard/无重复字符的最长子串.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/hard/无重复字符的最长子串.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -334,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1725890728627</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add">
+      <created>1726058140585</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1726058140585</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

@@ -33,6 +33,7 @@ compressed/
 **/dblogs
 **/.classpath
 **/.log
+workspace.xml
 
 pom.xml.versionsBackup
 basic/pom.xml.versionsBackup
