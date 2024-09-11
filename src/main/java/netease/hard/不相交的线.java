@@ -28,6 +28,7 @@ import java.util.Scanner;
  */
 public class 不相交的线 {
     public static void main(String[] args) {
+        String a = "adf".substring(2,2);
         Scanner in = new Scanner(System.in);
         while (in.hasNextLine()) {
             String one = in.nextLine();
