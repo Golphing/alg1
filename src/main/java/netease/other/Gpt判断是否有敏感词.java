@@ -1,4 +1,4 @@
-package netease.easy;
+package netease.other;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,14 +7,15 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-public class Gpt问答 {
+public class Gpt判断是否有敏感词 {
+
     public static void main(String[] args) {
         while(true){
             Scanner scanner = new Scanner(System.in);
             String url = "https://autobak.zaiwen.top/api/message";
             String userKey = "npmkl0a1xewqi96ceung0j600eo0ot5r"; // 请替换为你的用户密钥
-            String ques = "" ;
-            System.out.print("请输入问题：");
+            String ques = "你是内容安全专家，不允许句子中出现 涉政涉黄的词语，帮我分析 输入的句子中是否有类似词语，如果有的话，指出来敏感词,.注意需要结合上下文来判断是否敏感，不要错误分词导致的误判。请基于上面的要求，帮我识别以下句子是否有敏感词： " ;
+            System.out.print("请输入要检查的句子：");
             String mustContainLyric = scanner.nextLine();
             ques += mustContainLyric;
             // 创建 JSON 请求体
@@ -65,5 +66,3 @@ public class Gpt问答 {
 
     }
 }
-
-

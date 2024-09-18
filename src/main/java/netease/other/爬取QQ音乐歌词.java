@@ -1,24 +1,14 @@
-package netease.easy;
+package netease.other;
 
-import java.io.IOException;
-import java.net.URLEncoder;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import netease.util.JsonUtil;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Test;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.*;
 
 public class 爬取QQ音乐歌词 {
 

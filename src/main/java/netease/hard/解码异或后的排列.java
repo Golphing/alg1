@@ -1,5 +1,6 @@
 package netease.hard;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -9,7 +10,8 @@ import java.util.Scanner;
  *
  *
  * 思路：
- *      因为是奇数个，所以我们能够基于encoded获取到除第一个数据所有数据异或的结果，然后能够得到其他所有的数据的异或结果。两个再异或就是第一个元素的值，然后基于第一个数据的值能够得到其他所有的值。
+ *      因为是奇数个，所以我们能够基于encoded获取到除第一个数据所有数据异或的结果，然后能够得到其他所有的数据的异或结果。两个再异或就是第一个元素的值，
+ *      然后基于第一个数据的值能够得到其他所有的值。
  * 记录易错点
  *      异或是 ^
  *      0和任何数异或都是自己
@@ -37,7 +39,6 @@ public class 解码异或后的排列 {
                 }else {
                     r.append(ret[i] + ",");
                 }
-
             }
             System.out.print(r);
 

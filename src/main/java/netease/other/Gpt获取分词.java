@@ -1,4 +1,4 @@
-package netease.easy;
+package netease.other;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
