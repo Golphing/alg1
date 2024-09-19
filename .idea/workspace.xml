@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68e4c93b-3cc3-437c-9b90-326dcbb9b789" name="Default" comment="add">
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/买卖股票的最佳时机.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/合并K个升序链表.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/向数组中追加K个整数.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/爬阶梯问题.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/背包能装的最大价值.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/hard/超级回文数.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/买钢笔和铅笔的方案数.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/区间和的个数.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/压缩字符串.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/去除重复字母.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/有效的括号.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/根据字符出现频率排序.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/求两个数组的交集.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/用栈实现队列.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/走格子问题.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netease/easy/Gpt判断是否有敏感词.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/other/Gpt判断是否有敏感词.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netease/easy/Gpt获取分词.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/other/Gpt获取分词.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netease/easy/Gpt问答.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/other/Gpt问答.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netease/easy/爬取QQ音乐歌词.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/other/爬取QQ音乐歌词.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netease/easy/爬取百度歌曲歌词.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/other/爬取百度歌曲歌词.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netease/hard/最多能完成排序的块.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/hard/最多能完成排序的块.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netease/hard/解码异或后的排列.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/hard/解码异或后的排列.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,9 +166,23 @@
       <recent name="netease.easy" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.合并K个升序链表">
+  <component name="RunManager" selected="Application.根据字符出现频率排序">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration name="根据字符出现频率排序 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netease.easy.根据字符出现频率排序" />
+      <module name="com.wgp" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="netease.easy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="最多能完成排序的块" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="netease.hard.最多能完成排序的块" />
@@ -188,8 +198,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Gpt获取分词" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="netease.easy.Gpt获取分词" />
+    <configuration name="去除重复字母" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netease.easy.去除重复字母" />
+      <module name="com.wgp" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="netease.easy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="根据字符出现频率排序" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netease.easy.根据字符出现频率排序" />
       <module name="com.wgp" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -282,9 +306,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.根据字符出现频率排序" />
+        <item itemvalue="Application.根据字符出现频率排序 (1)" />
+        <item itemvalue="Application.去除重复字母" />
         <item itemvalue="Application.合并K个升序链表" />
         <item itemvalue="Application.最多能完成排序的块" />
-        <item itemvalue="Application.Gpt获取分词" />
       </list>
     </recent_temporary>
   </component>
@@ -375,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726061032361</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add">
+      <created>1726665410482</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1726665410482</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
