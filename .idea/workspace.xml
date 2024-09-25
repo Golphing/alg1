@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68e4c93b-3cc3-437c-9b90-326dcbb9b789" name="Default" comment="add">
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/买钢笔和铅笔的方案数.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/区间和的个数.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/压缩字符串.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/去除重复字母.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/有效的括号.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/根据字符出现频率排序.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/求两个数组的交集.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/用栈实现队列.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/走格子问题.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/买票需要的时间.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/交换和.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/同构字符串.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/大山的数目.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/字符串编辑距离.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/数字拆分求和.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/无法吃午餐的学生数量.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/最小栈.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/最小硬币个数.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/最长回文子串.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/检测回文字符串.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/求最后一块石头的重量.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/给定数字组成最大时间.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netease/easy/跳跃.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +171,7 @@
       <recent name="netease.easy" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.根据字符出现频率排序">
+  <component name="RunManager" selected="Application.最长回文子串">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -184,13 +189,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="最多能完成排序的块" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="netease.hard.最多能完成排序的块" />
+    <configuration name="最小栈" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netease.easy.最小栈" />
       <module name="com.wgp" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="netease.hard.*" />
+          <option name="PATTERN" value="netease.easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -226,8 +231,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="合并K个升序链表" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="netease.easy.合并K个升序链表" />
+    <configuration name="最长回文子串" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netease.easy.最长回文子串" />
       <module name="com.wgp" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -306,11 +311,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.最长回文子串" />
+        <item itemvalue="Application.最小栈" />
         <item itemvalue="Application.根据字符出现频率排序" />
         <item itemvalue="Application.根据字符出现频率排序 (1)" />
         <item itemvalue="Application.去除重复字母" />
-        <item itemvalue="Application.合并K个升序链表" />
-        <item itemvalue="Application.最多能完成排序的块" />
       </list>
     </recent_temporary>
   </component>
@@ -408,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726665410482</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add">
+      <created>1726737796162</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1726737796162</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -493,6 +505,16 @@
           <line>52</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/netease/easy/最小栈.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/netease/easy/最长回文子串.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/netease/hard/超级回文数.java</url>
           <line>80</line>
@@ -516,6 +538,7 @@
         <watch expression="b[0]" language="JAVA" />
         <watch expression="b[i]" language="JAVA" />
         <watch expression="c[0]" language="JAVA" />
+        <watch expression="&quot;,&quot;.split(&quot;,&quot;,-1)" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
