@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68e4c93b-3cc3-437c-9b90-326dcbb9b789" name="Default" comment="add">
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/medium/a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/medium/删除无效的括号.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/medium/或运算的最小翻转次数.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/medium/连续的子数组和.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netease/medium/钥匙和房间.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/压缩字符串.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/反转字符串中的元音字符1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/反转字符串中的单词.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/字符串最大公因子.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/种花问题.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/移动0到末尾.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/递增的三元子序列1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/除自身以外数组的乘积1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netease/medium/a.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,17 +166,17 @@
       <recent name="netease.easy" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.a">
+  <component name="RunManager" selected="Application.压缩字符串">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
-    <configuration name="根据字符出现频率排序 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="netease.easy.根据字符出现频率排序" />
+    <configuration name="反转字符串中的单词" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.反转字符串中的单词" />
       <module name="com.wgp" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="netease.easy.*" />
+          <option name="PATTERN" value="leetcode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -180,13 +184,55 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="最小栈" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="netease.easy.最小栈" />
+    <configuration name="反转字符串中的元音字符1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.反转字符串中的元音字符1" />
       <module name="com.wgp" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="netease.easy.*" />
+          <option name="PATTERN" value="leetcode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="递增的三元子序列1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.递增的三元子序列1" />
+      <module name="com.wgp" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetcode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="字符串最大公因子" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.字符串最大公因子" />
+      <module name="com.wgp" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetcode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="压缩字符串" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.压缩字符串" />
+      <module name="com.wgp" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetcode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -284,20 +330,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="a" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="netease.medium.a" />
-      <module name="com.wgp" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="netease.medium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -316,9 +348,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.a" />
-        <item itemvalue="Application.最小栈" />
-        <item itemvalue="Application.根据字符出现频率排序 (1)" />
+        <item itemvalue="Application.压缩字符串" />
+        <item itemvalue="Application.递增的三元子序列1" />
+        <item itemvalue="Application.反转字符串中的单词" />
+        <item itemvalue="Application.反转字符串中的元音字符1" />
+        <item itemvalue="Application.字符串最大公因子" />
       </list>
     </recent_temporary>
   </component>
@@ -430,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1727269772318</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add">
+      <created>1735554355359</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1735554355359</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -526,14 +567,9 @@
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/netease/medium/a.java</url>
-          <line>5</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/netease/medium/a.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="25" />
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/反转字符串中的元音字符1.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/netease/hard/超级回文数.java</url>
@@ -558,8 +594,8 @@
         <watch expression="int[] dd = new int[]{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2}" language="JAVA" />
         <watch expression="int[] cc = new int[]{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1}" language="JAVA" />
         <watch expression="cc.length" language="JAVA" />
-        <watch expression="" />
-        <watch expression="" />
+        <watch expression="a==&quot;&quot;" language="JAVA" />
+        <watch expression="&quot;&quot;.equals(a)" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
