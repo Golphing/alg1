@@ -17,7 +17,7 @@ import java.util.Scanner;
  *      递归
  *
  */
-public class 跳跃 {
+public class 跳跃00 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (in.hasNextInt()) {

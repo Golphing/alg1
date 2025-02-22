@@ -6,7 +6,7 @@ package leetcode;
  *    双指针，从两端向中间遍历，遇到元音字符就交换,注意交换后指针需要再走一步
  *    转成字符数组
  */
-public class 反转字符串中的元音字符1 {
+public class 反转字符串中的元音字符00 {
     public String reverseVowels(String s) {
         int left = 0;
         int right = s.length()-1;
@@ -48,6 +48,6 @@ public class 反转字符串中的元音字符1 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new 反转字符串中的元音字符1().reverseVowels("IceCreAm"));
+        System.out.println(new 反转字符串中的元音字符00().reverseVowels("IceCreAm"));
     }
 }

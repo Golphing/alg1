@@ -32,7 +32,7 @@ import java.util.*;
  *
  *
  */
-public class 去除重复字母 {
+public class 去除重复字母00 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (in.hasNextLine()) {

@@ -36,7 +36,7 @@ import java.util.*;
  *          需要一个备忘录
  *
  */
-public class 字符串编辑距离 {
+public class 字符串编辑距离00000 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (in.hasNextLine()) {
@@ -45,6 +45,8 @@ public class 字符串编辑距离 {
             System.out.println(minDistance(in1[0],in1[1]));
         }
     }
+
+
 
     public static int minDistance(String word1, String word2) {
         Map<String, Integer> memo = new HashMap<>();

@@ -9,7 +9,7 @@ package leetcode;
  *          计算每个元素左边的乘积，右边的乘积不需要用数据记录，实时算实时用
  *
  */
-public class 除自身以外数组的乘积1 {
+public class 除自身以外数组的乘积00 {
     public int[] productExceptSelf(int[] nums) {
         int[] ans = new int[nums.length];
         ans[0] = 1;

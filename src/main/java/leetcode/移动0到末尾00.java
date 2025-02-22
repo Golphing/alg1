@@ -8,7 +8,7 @@ package leetcode;
  *      2）注意结束条件
  *      3）注意别把 1 0 交换成了 0 1
  */
-public class 移动0到末尾1 {
+public class 移动0到末尾00 {
     public void moveZeroes(int[] nums) {
         int zero = 0;
         int nonz = 0;

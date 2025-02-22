@@ -6,7 +6,7 @@ package leetcode;
  *      用两个数组来维护一个是元素及其左边的最小值，一个是元素及其右边的最大值
  *      然后遍历数组，如果当前元素大于左边最小值，小于右边最大值，则返回true
  */
-public class 递增的三元子序列1 {
+public class 递增的三元子序列00 {
     public boolean increasingTriplet(int[] nums) {
         int n = nums.length;
         if (n < 3) {
@@ -36,7 +36,7 @@ public class 递增的三元子序列1 {
     著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。*/
 
     public static void main(String[] args) {
-        递增的三元子序列1 solution = new 递增的三元子序列1();
+        递增的三元子序列00 solution = new 递增的三元子序列00();
         int[] nums = {1, 2, 1, 3};
         boolean result = solution.increasingTriplet(nums);
         System.out.println("Result: " + result);
