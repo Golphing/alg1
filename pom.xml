@@ -35,11 +35,11 @@
             <version>4.13.1</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>it.sauronsoftware</groupId>
-            <artifactId>jave</artifactId>
-            <version>1.0.2</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>it.sauronsoftware</groupId>-->
+            <!--<artifactId>jave</artifactId>-->
+            <!--<version>1.0.2</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>ws.schild</groupId>
             <artifactId>jave-core</artifactId>

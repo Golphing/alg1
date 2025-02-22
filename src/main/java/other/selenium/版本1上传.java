@@ -29,7 +29,7 @@ public class 版本1上传 {
         if(sourceDirectoryPath != null && !"".equals(sourceDirectoryPath)){
             copyFiles(sourceDirectoryPath, destFilePath);
         }
-        System.setProperty("webdriver.chrome.driver", "/Users/hzwanggaoping/Downloads/chromedriver-mac-x64 2/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/Maxuemin/Downloads/chromedriver-mac-x64/chromedriver");
         WebDriver driver = new ChromeDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.get("https://studio.ximalaya.com"); // 确保与loadCookies时使用的域完全一致
