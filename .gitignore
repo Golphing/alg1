@@ -1,6 +1,6 @@
 # Compiled class file
 *.class
-
+.idea/
 # Log file
 *.log
 
@@ -26,6 +26,7 @@ replay_pid*
 *.iml
 */.settings
 .idea/
+**/.idea/
 */.classpath
 **/target
 **/logs
