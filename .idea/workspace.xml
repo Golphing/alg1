@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68e4c93b-3cc3-437c-9b90-326dcbb9b789" name="Default" comment="add">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/子数组最大平均数I.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/other/selenium/FirstScript.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/other/selenium/Mp4ToMp3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/other/selenium/T0220Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/other/selenium/UploadVideoToAlbum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/other/selenium/版本1上传.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/反转字符串中的元音字符1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/反转字符串中的元音字符00.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/移动0到末尾1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/移动0到末尾00.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/递增的三元子序列1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/递增的三元子序列00.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/除自身以外数组的乘积1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/除自身以外数组的乘积00.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netease/easy/去除重复字母.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/easy/去除重复字母00.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netease/easy/大山的数目.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/easy/大山的数目00.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netease/easy/字符串编辑距离.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/easy/字符串编辑距离00000.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netease/easy/跳跃.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netease/easy/跳跃00.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/other/selenium/版本1上传.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/other/selenium/版本1上传.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -517,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1736150254523</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add">
+      <created>1740220519511</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1740220519511</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -639,7 +632,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/other/selenium/版本1上传.java</url>
-          <line>26</line>
+          <line>31</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
