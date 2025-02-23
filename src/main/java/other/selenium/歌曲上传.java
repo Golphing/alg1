@@ -11,12 +11,13 @@ import java.nio.file.*;
 public class 歌曲上传 {
     public static void main(String[] args) throws IOException, InterruptedException {
         String sourceP = "";
-        String destP = "/Users/Maxuemin/Desktop/englishout/上传/版本2语音";
-        String albumSelector = "#root > section > div.Home_homeMain__3aDEt > div.false > section.AlbumItem_listItem__g-MZx.AlbumItem_gray__iCzAl > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span";
-//                #root > section > div.Home_homeMain__3aDEt > div.false > section:nth-child(2) > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span
-//                #root > section > div.Home_homeMain__3aDEt > div.false > section.AlbumItem_listItem__g-MZx.AlbumItem_gray__iCzAl > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span
+        String destP = "/Users/Maxuemin/Desktop/englishout/上传/【15】经典80后90后歌曲400首";
+//        String albumSelector = "#root > section > div.Home_homeMain__3aDEt > div.false > section:nth-child(3) > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span"
+
+        String albumSelector = "/html/body/div/section/div[2]/div[1]/section[2]/div[3]/div[3]/span";
         String intro = "关注后私信，获取资源，关注后私信，获取资源，关注后私信，获取资源，关注后私信，获取资源" +
                 "";
+
         batchUpload(sourceP, destP, albumSelector, intro);
     }
 
@@ -62,7 +63,7 @@ public class 歌曲上传 {
                     Files.delete(entry);
                     System.out.println("处理成功");
                     successCount++;
-                    if(successCount > 20){
+                    if(successCount > 50){
                         System.out.println("成功了20个，终止任务");
                         return;
                     }
