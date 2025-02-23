@@ -8,13 +8,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.IOException;
 import java.nio.file.*;
 
-public class 版本1上传 {
+public class 版本一上传 {
     public static void main(String[] args) throws IOException, InterruptedException {
-        String sourceP = "/Users/hzwanggaoping/Documents/aaa";
-        String destP = "/Users/hzwanggaoping/Documents/bbb";
+        String sourceP = "";
+        String destP = "/Users/Maxuemin/Desktop/englishout/上传/版本1-2的语音";
         String albumSelector = "#root > section > div.Home_homeMain__3aDEt > div.false > section.AlbumItem_listItem__g-MZx.AlbumItem_gray__iCzAl > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span";
-//                #root > section > div.Home_homeMain__3aDEt > div.false > section:nth-child(2) > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span
-//                #root > section > div.Home_homeMain__3aDEt > div.false > section.AlbumItem_listItem__g-MZx.AlbumItem_gray__iCzAl > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span
         String intro = "每日英语口语，如需电子文档和音频文件，请点击关注私信索要~<br>每日英语口语，如需电子文档和音频文件，请点击关注私信索要~<br>" +
                 "每日英语口语，如需电子文档和音频文件，请点击关注私信索要~<br>" +
                 "每日英语口语，如需电子文档和音频文件，请点击关注私信索要~<br>" +
@@ -36,6 +34,7 @@ public class 版本1上传 {
         Thread.sleep(20000L);
         driver.manage().window().setSize(new Dimension(1792, 998));
         int errorCount = 0;
+        int successCount = 0;
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(destFilePath))) {
             for (Path entry : stream) {
                 if (Files.isRegularFile(entry)) {
@@ -45,11 +44,13 @@ public class 版本1上传 {
                         boolean ret = UploadVideoToAlbum.uploadSingleVideoToAlbum(driver, js, albumSelector, entry.toFile().getAbsolutePath(), intro);
                         if(!ret){
                             System.out.println("处理失败");
+
                             errorCount++;
                             if(errorCount>5){
                                 System.out.println("失败过多，终止任务");
                                 return;
                             }
+                            continue;
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -59,9 +60,17 @@ public class 版本1上传 {
                             System.out.println("失败过多，终止任务");
                             return;
                         }
+                        continue;
                     }
                     Files.delete(entry);
                     System.out.println("处理成功");
+                    successCount++;
+                    if(successCount > 10){
+                        System.out.println("成功了10个，终止任务");
+                        return;
+                    }
+                    Thread.sleep(10000L);
+
                 }
             }
         }

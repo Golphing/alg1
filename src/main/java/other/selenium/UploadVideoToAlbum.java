@@ -1,7 +1,6 @@
 package other.selenium;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -57,7 +56,7 @@ public class UploadVideoToAlbum {
             driver.findElement(By.cssSelector("#submit-box > div > div.publish-box-container-new-7rfTxbuo > div > button.ant-btn.mg-l-10.publish-box-new-btn-1I1nky3y.confirm-publish-btn-new-3F0EvXXa.ant-btn-primary")).click();
             Thread.sleep(3000L);
             return true;
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
