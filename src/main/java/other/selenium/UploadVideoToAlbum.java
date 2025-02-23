@@ -26,20 +26,20 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class UploadVideoToAlbum {
-    public static boolean uploadSingleVideoToAlbum(WebDriver driver, JavascriptExecutor js, String albumSelector, String filePath, String intro){
+    public static boolean uploadSingleVideoToAlbum(WebDriver driver, JavascriptExecutor js, String albumName, String filePath, String intro){
         try {
             driver.get("https://studio.ximalaya.com/opus");
             Thread.sleep(3000L);
             driver.switchTo().frame(0);
             Thread.sleep(3000L);
-//            driver.findElement(By.cssSelector(".AlbumItem_listItem__g-MZx:nth-child(2) .XButton2_buttonWrap2__Y-nR8:nth-child(3) > span")).click();
-            driver.findElement(By.cssSelector(albumSelector)).click();
+            String albumSelector = "//div[contains(text(), '"+albumName+"')]/../../..//div[3]/div[3]/span";
+            driver.findElement(By.xpath(albumSelector)).click();
             Thread.sleep(3000L);
             driver.findElement(By.cssSelector(".primary")).click();
             Thread.sleep(3000L);
             WebElement hidden_input = driver.findElement(By.cssSelector("input[type='file']"));
             hidden_input.sendKeys(filePath);
-            Thread.sleep(3000L);
+            Thread.sleep(8000L);
             driver.switchTo().frame(driver.findElement(By.className("ke-edit-iframe")));
             Thread.sleep(3000L);
             js.executeScript(     "arguments[0].innerText = '"+intro+"';",      driver.findElement(By.cssSelector("p[data-flag='normal']")) );

@@ -14,7 +14,7 @@ public class 歌曲上传 {
         String destP = "/Users/Maxuemin/Desktop/englishout/上传/【15】经典80后90后歌曲400首";
 //        String albumSelector = "#root > section > div.Home_homeMain__3aDEt > div.false > section:nth-child(3) > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span"
 
-        String albumSelector = "/html/body/div/section/div[2]/div[1]/section[2]/div[3]/div[3]/span";
+        String albumSelector = "8090";
         String intro = "关注后私信，获取资源，关注后私信，获取资源，关注后私信，获取资源，关注后私信，获取资源" +
                 "";
 
@@ -63,7 +63,7 @@ public class 歌曲上传 {
                     Files.delete(entry);
                     System.out.println("处理成功");
                     successCount++;
-                    if(successCount > 50){
+                    if(successCount > 500){
                         System.out.println("成功了20个，终止任务");
                         return;
                     }
