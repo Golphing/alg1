@@ -1,4 +1,4 @@
-package other.selenium;
+package other.common;
 
 import org.openqa.selenium.*;
 
@@ -34,12 +34,12 @@ public class UploadVideoToAlbum {
             Thread.sleep(3000L);
             String albumSelector = "//div[contains(text(), '"+albumName+"')]/../../..//div[3]/div[3]/span";
             driver.findElement(By.xpath(albumSelector)).click();
-            Thread.sleep(3000L);
+            Thread.sleep(8000L);
             driver.findElement(By.cssSelector(".primary")).click();
             Thread.sleep(3000L);
             WebElement hidden_input = driver.findElement(By.cssSelector("input[type='file']"));
             hidden_input.sendKeys(filePath);
-            Thread.sleep(8000L);
+            Thread.sleep(15000L);
             driver.switchTo().frame(driver.findElement(By.className("ke-edit-iframe")));
             Thread.sleep(3000L);
             js.executeScript(     "arguments[0].innerText = '"+intro+"';",      driver.findElement(By.cssSelector("p[data-flag='normal']")) );
@@ -54,7 +54,7 @@ public class UploadVideoToAlbum {
             driver.switchTo().parentFrame();
             Thread.sleep(3000L);
             driver.findElement(By.cssSelector("#submit-box > div > div.publish-box-container-new-7rfTxbuo > div > button.ant-btn.mg-l-10.publish-box-new-btn-1I1nky3y.confirm-publish-btn-new-3F0EvXXa.ant-btn-primary")).click();
-            Thread.sleep(3000L);
+            Thread.sleep(13000L);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

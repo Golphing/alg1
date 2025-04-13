@@ -4,6 +4,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import other.common.UploadVideoToAlbum;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -11,7 +12,7 @@ import java.nio.file.*;
 public class 歌曲上传 {
     public static void main(String[] args) throws IOException, InterruptedException {
         String sourceP = "";
-        String destP = "/Users/Maxuemin/Desktop/englishout/上传/【15】经典80后90后歌曲400首";
+        String destP = "/Users/Maxuemin/Desktop/englishout/上传/【90后歌曲180首";
 //        String albumSelector = "#root > section > div.Home_homeMain__3aDEt > div.false > section:nth-child(3) > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span"
 
         String albumSelector = "8090";
@@ -44,7 +45,7 @@ public class 歌曲上传 {
                         if(!ret){
                             System.out.println("处理失败");
                             errorCount++;
-                            if(errorCount>5){
+                            if(errorCount>50){
                                 System.out.println("失败过多，终止任务");
                                 return;
                             }
@@ -63,7 +64,7 @@ public class 歌曲上传 {
                     Files.delete(entry);
                     System.out.println("处理成功");
                     successCount++;
-                    if(successCount > 500){
+                    if(successCount > 200){
                         System.out.println("成功了20个，终止任务");
                         return;
                     }

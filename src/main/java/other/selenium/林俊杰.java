@@ -9,31 +9,36 @@ import other.common.UploadVideoToAlbum;
 import java.io.IOException;
 import java.nio.file.*;
 
-public class 版本一上传 {
+public class 林俊杰 {
     public static void main(String[] args) throws IOException, InterruptedException {
         String sourceP = "";
-        String destP = "/Users/Maxuemin/Desktop/englishout/上传/版本1-2的语音";
-        String albumSelector = "开口说英文不再是难题";
-        String intro = "每日英语口语，如需电子文档和音频文件，请点击关注私信索要~<br>每日英语口语，如需电子文档和音频文件，请点击关注私信索要~<br>" +
-                "每日英语口语，如需电子文档和音频文件，请点击关注私信索要~<br>" +
-                "每日英语口语，如需电子文档和音频文件，请点击关注私信索要~<br>" +
-                "每日英语口语，如需电子文档和音频文件，请点击关注私信索要~<br>" +
-                "每日英语口语，如需电子文档和音频文件，请点击关注私信索要~<br>" +
+        String destP = "/Users/Maxuemin/Desktop/林俊杰";
+//        String albumSelector = "#root > section > div.Home_homeMain__3aDEt > div.false > section:nth-child(3) > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span"
+
+        String albumSelector = "林俊杰";
+        String intro = "关注后私信，获取资源，关注后私信，获取资源，关注后私信，获取资源，关注后私信，获取资源" +
                 "";
-        batchUpload(sourceP, destP, albumSelector, intro);
+
+        bat(sourceP, destP, albumSelector, intro);
     }
 
-    public static void batchUpload(String sourceDirectoryPath, String destFilePath, String albumSelector, String intro) throws IOException, InterruptedException {
-        //先拷贝一下文件，保留原始文件目录
-        if(sourceDirectoryPath != null && !"".equals(sourceDirectoryPath)){
-            copyFiles(sourceDirectoryPath, destFilePath);
-        }
+    public static void bat(String sourceDirectoryPath, String destFilePath, String albumSelector, String intro) throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", "/Users/Maxuemin/Downloads/chromedriver-mac-x64/chromedriver");
         WebDriver driver = new ChromeDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.get("https://studio.ximalaya.com"); // 确保与loadCookies时使用的域完全一致
         Thread.sleep(20000L);
         driver.manage().window().setSize(new Dimension(1792, 998));
+        batchUpload(driver, js, sourceDirectoryPath, destFilePath, albumSelector, intro);
+
+    }
+
+    public static void batchUpload(WebDriver driver, JavascriptExecutor js, String sourceDirectoryPath, String destFilePath, String albumSelector, String intro) throws IOException, InterruptedException {
+        //先拷贝一下文件，保留原始文件目录
+        if(sourceDirectoryPath != null && !"".equals(sourceDirectoryPath)){
+            copyFiles(sourceDirectoryPath, destFilePath);
+        }
+
         int errorCount = 0;
         int successCount = 0;
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(destFilePath))) {
@@ -45,9 +50,8 @@ public class 版本一上传 {
                         boolean ret = UploadVideoToAlbum.uploadSingleVideoToAlbum(driver, js, albumSelector, entry.toFile().getAbsolutePath(), intro);
                         if(!ret){
                             System.out.println("处理失败");
-
                             errorCount++;
-                            if(errorCount>5){
+                            if(errorCount>50){
                                 System.out.println("失败过多，终止任务");
                                 return;
                             }
@@ -64,10 +68,10 @@ public class 版本一上传 {
                         continue;
                     }
                     Files.delete(entry);
-                    System.out.println("处理成功：" + successCount);
+                    System.out.println("处理成功");
                     successCount++;
-                    if(successCount > 20){
-                        System.out.println("成功了10个，终止任务");
+                    if(successCount > 100){
+                        System.out.println("成功了20个，终止任务");
                         return;
                     }
                     Thread.sleep(10000L);

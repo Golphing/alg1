@@ -4,6 +4,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import other.common.UploadVideoToAlbum;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -12,7 +13,7 @@ public class 版本2上传 {
     public static void main(String[] args) throws IOException, InterruptedException {
         String sourceP = "";
         String destP = "/Users/Maxuemin/Desktop/englishout/上传/版本2语音";
-        String albumSelector = "#root > section > div.Home_homeMain__3aDEt > div.false > section.AlbumItem_listItem__g-MZx.AlbumItem_gray__iCzAl > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span";
+        String albumSelector = "高频口语生活口语3000句";
 //                #root > section > div.Home_homeMain__3aDEt > div.false > section:nth-child(2) > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span
 //                #root > section > div.Home_homeMain__3aDEt > div.false > section.AlbumItem_listItem__g-MZx.AlbumItem_gray__iCzAl > div.AlbumItem_itemRight__fbONX > div:nth-child(3) > span
         String intro = "每日英语口语，如需电子文档和音频文件，请点击关注私信索要~<br>每日英语口语，如需电子文档和音频文件，请点击关注私信索要~<br>" +
