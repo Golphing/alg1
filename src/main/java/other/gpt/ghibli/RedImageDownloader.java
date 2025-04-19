@@ -68,11 +68,11 @@ public class RedImageDownloader {
     private void handleLoginPopup() {
         try {
             // 登录成功后保存cookies
-
+            Thread.sleep(30000);
 //            saveCookies(driver);
 //            driver.quit();
             try {
-                loadCookies(driver);
+//                loadCookies(driver);
                 Thread.sleep(TimeUnit.MINUTES.toMillis(1));
             } catch (Exception e) {
                 System.out.println(e);
@@ -236,7 +236,7 @@ public class RedImageDownloader {
                     query = URLEncoder.encode(query, StandardCharsets.UTF_8.toString());
                     url = baseUrl + "?" + query;
                 }
-                downloadImage(url, "/Users/hzwanggaoping/picred/t/", filename);
+                downloadImage(url, "/Users/Maxuemin/o", filename);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -268,11 +268,11 @@ public class RedImageDownloader {
             long expiry = node.get("expiry").asLong();
             boolean isSecure = node.get("secure").asBoolean();
             boolean httpOnly = node.get("httpOnly").asBoolean();
-            String sameSite = node.get("sameSite").asText();
+//            String sameSite = node.get("sameSite").asText();
 
             // 构造 Cookie 对象
             Date expiryDate = new Date(expiry);
-            Cookie cookie = new Cookie(name, value, domain, path, expiryDate, isSecure, httpOnly, sameSite);
+            Cookie cookie = new Cookie(name, value, domain, path, expiryDate, isSecure, httpOnly, "");
             return cookie;
         }
     }
