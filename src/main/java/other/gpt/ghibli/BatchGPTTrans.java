@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
  * 如果没有调用转换的程序去转换
  */
 public class BatchGPTTrans {
-    private static final Path COOKIE_PATH = Paths.get("/Users/hzwanggaoping/trae项目/redb/cookies_gpt.json");
+    private static final Path COOKIE_PATH = Paths.get("cookies_gpt.json");
 
     public static void main(String[] args) throws InterruptedException {
 //        Thread.sleep(TimeUnit.HOURS.toMillis(2));
@@ -46,9 +46,9 @@ public class BatchGPTTrans {
 
             //开始一个转换任务
             // 源文件夹路径
-            String sourceDirPath = "/Users/hzwanggaoping/picred/o/";
+            String sourceDirPath = "~/o/";
             // 目标文件夹路径
-            String targetDirPath = "/Users/hzwanggaoping/picred/d/";
+            String targetDirPath = "~/d/";
             // 创建源文件夹和目标文件夹的File对象
             File sourceDir = new File(sourceDirPath);
             File targetDir = new File(targetDirPath);
@@ -245,7 +245,7 @@ public class BatchGPTTrans {
         page.keyboard().type("转成吉卜力风格");
         //点击转
         clickElement(page, ".icon-2xl");
-        Thread.sleep(TimeUnit.MINUTES.toMillis(2));
+        Thread.sleep(TimeUnit.MINUTES.toMillis(5));
 
         //下载图片
         if(page.locator("img[alt='已生成图片']").count()>0){
