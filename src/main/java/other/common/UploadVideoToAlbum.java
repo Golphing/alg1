@@ -1,7 +1,11 @@
 package other.common;
 
+import com.microsoft.playwright.FrameLocator;
+import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.Page;
 import org.openqa.selenium.*;
 
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.Test;
@@ -26,6 +30,53 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class UploadVideoToAlbum {
+
+    public static boolean uploadSingleVideoToAlbum1(Page page, String albumName, String filePath, String intro) {
+        try {
+            // 导航到作品页面
+            page.navigate("https://studio.ximalaya.com/opus");
+
+            // 使用智能等待替代固定等待
+            FrameLocator frameLocator = page.frameLocator("iframe").first();
+
+            // 选择专辑
+            Locator albumSelector = frameLocator.locator(
+                    "xpath=//div[contains(text(), '" + albumName + "')]/../../..//div[3]/div[3]/span"
+            );
+            albumSelector.click();
+
+            // 等待弹窗出现（更可靠的等待方式）
+            frameLocator.locator(".primary").click();
+
+            // 文件上传（Playwright原生支持）
+            frameLocator.locator("input[type='file']").setInputFiles(Paths.get(filePath));
+
+            // 处理富文本编辑器iframe
+            FrameLocator editorFrame = frameLocator.frameLocator(".ke-edit-iframe");
+            Locator introEditor = editorFrame.locator("p[data-flag='normal']");
+
+            // 使用Playwright的输入处理代替JS执行
+            introEditor.fill(intro);
+
+            // 触发输入事件（针对现代前端框架）
+            introEditor.dispatchEvent("input");
+
+            // 提交表单
+            frameLocator.locator("#submit-box button.confirm-publish-btn-new-3F0EvXXa").click();
+            Thread.sleep(30000);
+            // 等待发布完成（推荐使用条件等待）
+//            frameLocator.locator(".publish-success-notification", new Page.WaitForSelectorOptions().setTimeout(13000));
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            // 确保返回主文档
+            page.mainFrame();
+        }
+    }
+
     public static boolean uploadSingleVideoToAlbum(WebDriver driver, JavascriptExecutor js, String albumName, String filePath, String intro){
         try {
             driver.get("https://studio.ximalaya.com/opus");

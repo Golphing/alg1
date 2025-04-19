@@ -1,5 +1,6 @@
 package other.common;
 
+import com.microsoft.playwright.Page;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -41,6 +42,62 @@ public class CommonUtil {
                         System.out.println("开始处理文件： "+entry.getFileName());
                         try {
                             boolean ret = UploadVideoToAlbum.uploadSingleVideoToAlbum(driver, js, albumSelector, entry.toFile().getAbsolutePath(), intro);
+                            if(!ret){
+                                System.out.println("处理失败");
+                                errorCount++;
+                                if(errorCount>50){
+                                    System.out.println("失败过多，终止任务");
+                                    return;
+                                }
+                                continue;
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            System.out.println("处理失败");
+                            errorCount++;
+                            if(errorCount>5){
+                                System.out.println("失败过多，终止任务");
+                                return;
+                            }
+                            continue;
+                        }
+                        Files.delete(entry);
+                        System.out.println("处理成功："+successCount);
+                        successCount++;
+                        if(successCount > num){
+                            System.out.println("成功了20个，终止任务");
+                            return;
+                        }
+                        Thread.sleep(10000L);
+
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+        }
+    }
+
+    public static void batchUploadp(Page page, String sourceDirectoryPath, String destFilePath, String albumSelector, String intro, int num) throws IOException, InterruptedException {
+
+        try {
+            //先拷贝一下文件，保留原始文件目录
+            if(sourceDirectoryPath != null && !"".equals(sourceDirectoryPath)){
+                copyFiles(sourceDirectoryPath, destFilePath);
+            }
+
+            int errorCount = 0;
+            int successCount = 0;
+            try (DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(destFilePath))) {
+                for (Path entry : stream) {
+                    if (Files.isRegularFile(entry)) {
+                        // 如果是常规文件，打印其绝对路径
+                        System.out.println("开始处理文件： "+entry.getFileName());
+                        try {
+                            boolean ret = UploadVideoToAlbum.uploadSingleVideoToAlbum1(page, albumSelector, entry.toFile().getAbsolutePath(), intro);
                             if(!ret){
                                 System.out.println("处理失败");
                                 errorCount++;
