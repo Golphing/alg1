@@ -31,7 +31,7 @@ public class batchUploadPlayright {
 //            page.waitForTimeout(20000);
 
 
-            String intro = "关注后私信，获取资源";
+            String intro = "关注后私信，获取资源ddd";
 
             // 保存cookie（在操作完成后）
             context.storageState(new BrowserContext.StorageStateOptions().setPath(COOKIE_PATH));
