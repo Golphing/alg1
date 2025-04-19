@@ -7,8 +7,7 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -91,26 +90,54 @@ public class BatchGPTTrans {
 
     public static void startWork(Playwright playwright, String filePath) throws InterruptedException {
 //        Thread.sleep(TimeUnit.MINUTES.toMillis(5));
-        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(1500).setArgs(Arrays.asList(
-                "--start-maximized",        // 窗口最大化（[[13]](#__13)）
-                "--no-sandbox"             // 解决 Linux 权限问题（[[13]](#__13)）
-        )));
-
-//        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setArgs(Arrays.asList(
-//                "--no-sandbox",        // ✅ 必须的Linux权限参数
-//                "--disable-gpu",       // ➕ 建议添加的GPU禁用（某些服务器环境需要）
-//                "--single-process"     // ➕ 可选单进程模式（提高稳定性）
-//        )));
-
+        boolean useChrom = true;
+        Browser browser = null;
         BrowserContext context = null;
-        if (COOKIE_PATH.toFile().exists()) {
+        if(useChrom){
+            browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome"). // 关键配置
+                    setHeadless(false).setArgs(java.util.Arrays.asList(
+                    "--start-maximized",        // 窗口最大化（[[13]](#__13)）
+                    "--no-sandbox"             // 解决 Linux 权限问题（[[13]](#__13)）
+            )));
+
+            if (COOKIE_PATH.toFile().exists()) {
+                context = browser.newContext(
+                        new Browser.NewContextOptions()
+                                .setStorageStatePath(COOKIE_PATH).setViewportSize(null));
+            }else {
+                context = browser.newContext(new Browser.NewContextOptions()
+                        .setViewportSize(null));
+            }
+        }else {
+            // 创建配置 Map
+            Map<String, Object> prefs = new HashMap<>();
+            prefs.put("marionette.enabled", false);
+            prefs.put("remote.enabled", false);
+            prefs.put("privacy.resistFingerprinting", false);
+
+            BrowserType.LaunchOptions options = new BrowserType.LaunchOptions()
+                    .setHeadless(false)
+                    .setFirefoxUserPrefs(Collections.unmodifiableMap(prefs));
+
+            browser = playwright.firefox().launch(options);
             context = browser.newContext(
                     new Browser.NewContextOptions()
-                            .setStorageStatePath(COOKIE_PATH).setViewportSize(null));
-        }else {
-            context = browser.newContext(new Browser.NewContextOptions()
-                    .setViewportSize(null));
+                            .setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0")
+                            .setViewportSize(1366, 768)
+                            .setStorageStatePath(COOKIE_PATH)
+            );
+
+            // 注入反检测脚本
+            context.addInitScript(
+                    "Object.defineProperty(navigator, 'webdriver', { get: () => undefined });"
+                            + "window.navigator.plugins = ["
+                            + "  { name: 'PDF Viewer', filename: 'internal-pdf-viewer' },"
+                            + "  { name: 'Chrome PDF Viewer', filename: 'mhjfbmdgcfjbbpaeojofohoefgiehjai' }"
+                            + "];"
+            );
         }
+
+
         Page newPage = null;
         try {
             java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -120,35 +147,35 @@ public class BatchGPTTrans {
             page.setViewportSize(width, height);
             // 打开目标网站
             page.navigate("https://nf.video/");
-            page.evaluate("document.documentElement.requestFullscreen()");
-            Thread.sleep(10000);
-            clickElement(page, "text='AI镜像专区'");
+//            page.evaluate("document.documentElement.requestFullscreen()");
             Thread.sleep(5000);
+            clickElement(page, "text='AI镜像专区'");
+            Thread.sleep(1000);
 
             // 检查是否已登录
             if (!COOKIE_PATH.toFile().exists()) {
                 System.out.println("请手动登录，等待120秒...");
-                page.waitForTimeout(120000); // 等待2分钟用于登录
+                page.waitForTimeout(40000); // 等待2分钟用于登录
                 saveCookies(context, context.cookies());
             }
 
             // 等待页面加载
 //            page.waitForLoadState(LoadState.NETWORKIDLE);
-            Thread.sleep(10000);
+            Thread.sleep(5000);
             Locator imgLocator1 = page.locator("div.betweenFlex > button");
             // 触发点击（自动等待元素可操作）
             if(imgLocator1.count() > 0){
                 imgLocator1.click(new Locator.ClickOptions()
                         .setForce(true)  // 强制点击（绕过可操作性检查）
-                        .setTimeout(15000) // 显式等待元素出现
+                        .setTimeout(5000) // 显式等待元素出现
                 );
-                Thread.sleep(3000);
+                Thread.sleep(1000);
             }
             while(true){
                 Locator nxt = page.locator("xpath=//span[text()='下一个']");
                 if(nxt.count() > 0){
                     clickElement(page, "xpath=//span[text()='下一个']");
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 }else {
                     break;
                 }
@@ -156,7 +183,7 @@ public class BatchGPTTrans {
             Locator iknow = page.locator("span:has-text('知道了')");
             if(iknow.count() > 0){
                 clickElement(page, "span:has-text('知道了')");
-                Thread.sleep(3000);
+                Thread.sleep(1000);
             }
 
             Locator imgLocator = page.locator(".lumaDom.fillImg img.pointer");
@@ -166,7 +193,7 @@ public class BatchGPTTrans {
                         .setForce(true)  // 强制点击（绕过可操作性检查）
                         .setTimeout(15000) // 显式等待元素出现
                 );
-                Thread.sleep(9000);
+                Thread.sleep(4000);
             }
             newPage = page;
             Locator img2Locator = page.locator(".popBox.relative img.pointer");
@@ -180,15 +207,16 @@ public class BatchGPTTrans {
 //                newPage.navigate("https://gpt.bestaistore.com/?model=gpt-4o-image-vip");
             }
 //            System.out.println(newPage.innerHTML("html"));
-            Thread.sleep(35000);
+            Thread.sleep(15000);
 //            page.close();
             gptPageOprator(newPage, filePath);
 //            newPage.close();
 
         } catch (Exception e) {
             e.printStackTrace();
-            Thread.sleep(TimeUnit.MINUTES.toMillis(3));
+//            Thread.sleep(TimeUnit.MINUTES.toMillis(3));
         }
+        Thread.sleep(TimeUnit.SECONDS.toMillis(new Random().nextInt(300)));
         browser.close();
 
     }
