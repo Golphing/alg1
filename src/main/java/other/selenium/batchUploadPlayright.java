@@ -39,16 +39,15 @@ public class batchUploadPlayright {
             // 批量上传逻辑
             try {
                 // 歌曲
-                CommonUtil.batchUploadp(page, "","/Users/hzwanggaoping/Documents/古诗词-一年级上/", "8090", intro, 50);
+//                CommonUtil.batchUploadp(page, "","/Users/hzwanggaoping/Documents/古诗词-一年级上/", "8090", intro, 50);
 
                 // 童话
-//                CommonUtil.batchUpload(page, "/Users/Maxuemin/Desktop/englishout/上传/格林童话405首1.5G-1", "格林童话", intro, 30);
-
+                CommonUtil.batchUploadp(page, "", "/Users/Maxuemin/Desktop/englishout/上传/爸爸妈妈讲睡前十分钟故事77首333M/妈妈讲的睡前十分钟故事1", "格林童话", intro, 3);
                 // 英语1
-//                CommonUtil.batchUpload(page, "/Users/Maxuemin/Desktop/englishout/上传/版本1-2的语音", "开口说英文不再是难题", intro, 5);
+                CommonUtil.batchUploadp(page, "",  "/Users/Maxuemin/Desktop/englishout/上传/版本1-2的语音", "开口说英文不再是难题", intro, 1);
 
                 // 英语2
-//                CommonUtil.batchUpload(page, "/Users/Maxuemin/Desktop/englishout/上传/版本2语音", "高频口语生活口语3000句", intro, 5);
+//                CommonUtil.batchUploadp(page, "","/Users/Maxuemin/Desktop/englishout/上传/版本2语音", "高频口语生活口语3000句", intro, 5);
 
             } finally {
                 context.close();

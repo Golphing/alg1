@@ -28,7 +28,7 @@ public class BatchUploadTask {
 
         //歌曲
 
-        CommonUtil.batchUpload(driver, js,"", "/Users/Maxuemin/Desktop/englishout/上传/yueyu", "8090", intro, 50);
+        CommonUtil.batchUpload(driver, js,"", "/Users/Maxuemin/Desktop/englishout/上传/一人一首", "8090", intro, 5);
 
         //童话
         CommonUtil.batchUpload(driver, js,"", "/Users/Maxuemin/Desktop/englishout/上传/格林童话405首1.5G-1", "格林童话", intro, 30);

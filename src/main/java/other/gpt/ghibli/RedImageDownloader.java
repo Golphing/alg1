@@ -34,7 +34,7 @@ import java.util.concurrent.TimeUnit;
 
 public class RedImageDownloader {
 //    private static String urii = "https://www.xiaohongshu.com/explore/67ed0c75000000001d01fdee?xsec_token=ABYWBltI3VOwsxMqJ2f9J6UDyV9gxJde2UYOjIh9WvIgU=&xsec_source=pc_search&source=web_explore_feed";
-    private static String urii = "https://www.xiaohongshu.com/explore/67ed3038000000001d0191c8?channelType=web_engagement_notification_page&channelTabId=mentions&xsec_token=LBE_3SXesMXJXTluFs0Z2s5kcKiMsexdHRnFbwsMVppjk=&xsec_source=pc_notice";
+    private static String urii = "https://www.xiaohongshu.com/explore/67ed3038000000001d0191c8?channelType=web_engagement_notification_page&channelTabId=mentions&xsec_token=LBE_3SXesMXJXTluFs0Z2s5gQLMZ5pmUZu8ZHWvpl0uGk=&xsec_source=pc_notice";
 //    private static String urii = "https://www.xiaohongshu.com/explore/67ed0c75000000001d01fdee?xsec_token=AB59Aak7vbTKh7gEyn9dwrcyf80BTHEK3zw-Q6KMqycw4=&xsec_source=pc_user";
     private WebDriver driver;
 
@@ -144,7 +144,7 @@ public class RedImageDownloader {
         WebElement container = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.cssSelector(".note-scroller")
         ));
-        for(int i=0;i<5;i++){
+        for(int i=0;i<25;i++){
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollTop += 2500;", container);
             Thread.sleep(2000L);

@@ -118,10 +118,9 @@ public class CommonUtil {
                             continue;
                         }
                         Files.delete(entry);
-                        System.out.println("处理成功："+successCount);
-                        successCount++;
+                        System.out.println("处理成功："+successCount++);
                         if(successCount > num){
-                            System.out.println("成功了20个，终止任务");
+                            System.out.println("成功了"+successCount+"个，终止任务");
                             return;
                         }
                         Thread.sleep(10000L);

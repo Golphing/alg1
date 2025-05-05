@@ -4,6 +4,7 @@ import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.*;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -17,6 +18,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class BatchGPTTrans {
     private static final Path COOKIE_PATH = Paths.get("cookies_gpt.json");
+
+    static String gFileName = "";
 
     public static void main(String[] args) throws InterruptedException {
 //        Thread.sleep(TimeUnit.HOURS.toMillis(2));
@@ -45,9 +48,9 @@ public class BatchGPTTrans {
 
             //开始一个转换任务
             // 源文件夹路径
-            String sourceDirPath = "~/o/";
+            String sourceDirPath = "/Users/Maxuemin/o/";
             // 目标文件夹路径
-            String targetDirPath = "~/d/";
+            String targetDirPath = "/Users/Maxuemin//d/";
             // 创建源文件夹和目标文件夹的File对象
             File sourceDir = new File(sourceDirPath);
             File targetDir = new File(targetDirPath);
@@ -71,12 +74,12 @@ public class BatchGPTTrans {
                                 }
                             }
                         }
-                        Thread.sleep(TimeUnit.MINUTES.toMillis(10));
+                        Thread.sleep(TimeUnit.MINUTES.toMillis(50));
                     } else {
                         System.out.println("源文件夹中没有文件。");
                     }
                 } else {
-                    System.out.println("源文件夹不存在或不是一个目录。");
+                    System.out.println("源文件夹不存在或不是一个目录。");break;
                 }
             }
             // 停止录制并保存轨迹文件
@@ -136,6 +139,25 @@ public class BatchGPTTrans {
                             + "];"
             );
         }
+        // 注入反检测脚本
+        context.addInitScript(
+                "Object.defineProperty(navigator, 'webdriver', { get: () => undefined });"
+                        + "window.navigator.plugins = ["
+                        + "  { name: 'PDF Viewer', filename: 'internal-pdf-viewer' },"
+                        + "  { name: 'Chrome PDF Viewer', filename: 'mhjfbmdgcfjbbpaeojofohoefgiehjai' }"
+                        + "];"
+        );
+        context.onPage(page -> {
+            page.onDownload(download -> {
+                System.out.println("监听到下载行为，保存" + gFileName);
+                File targetFile = new File("/Users/Maxuemin/d/", gFileName);
+                // 检查文件在目标文件夹中是否存在
+                if (targetFile.exists()) {
+                                System.out.println("文件 " + gFileName + " 存在于目标文件夹中。不下载");
+                }
+                download.saveAs(Paths.get("/Users/Maxuemin/d/",gFileName));
+            });
+        });
 
 
         Page newPage = null;
@@ -185,17 +207,17 @@ public class BatchGPTTrans {
                 clickElement(page, "span:has-text('知道了')");
                 Thread.sleep(1000);
             }
-
+            newPage = page;
             Locator imgLocator = page.locator(".lumaDom.fillImg img.pointer");
             if(imgLocator.count() > 0){
-                // 触发点击（自动等待元素可操作）
-                imgLocator.click(new Locator.ClickOptions()
-                        .setForce(true)  // 强制点击（绕过可操作性检查）
-                        .setTimeout(15000) // 显式等待元素出现
-                );
-                Thread.sleep(4000);
+                Page popup = page.waitForPopup(() -> {
+//                    page.locator(".popBox.relative img.pointer").click();
+                    clickElement(page, ".lumaDom.fillImg img.pointer");
+                });
+                System.out.println("页面跳转");
+                newPage = popup;
             }
-            newPage = page;
+
             Locator img2Locator = page.locator(".popBox.relative img.pointer");
             if(img2Locator.count() > 0){
                 Page popup = page.waitForPopup(() -> {
@@ -241,12 +263,12 @@ public class BatchGPTTrans {
             clickElement(page, "main .icon-md.text-token-text-tertiary");
             Thread.sleep(1000);
             //其他模型,鼠标移动到这个位置
-            Locator otherModel = page.locator("div.flex.grow.justify-between.gap-2.overflow-hidden:has-text('其他模型')");
+            Locator otherModel = page.locator("div[role='menuitem']:has-text('高级出图')");
             Thread.sleep(1000);
             page.mouse().move(     otherModel.boundingBox().x + otherModel.boundingBox().width / 2,     otherModel.boundingBox().y + otherModel.boundingBox().height / 2 );
             Thread.sleep(1000);
             //鼠标点击   gpt-4o-image-vip
-            clickElement(page, "div[class*='flex'][class*='items-center']:has(div:text('gpt-image'))");
+            clickElement(page, "xpath=//div[@role='menuitem' and .//div[contains(text(),'gpt-image')]]");
             Thread.sleep(15000);
         }
         if(!useImg){
@@ -283,7 +305,7 @@ public class BatchGPTTrans {
             System.out.println("图片链接:" + url);
             // 获取文件名（包含文件类型）
             String fileName = file.getName();
-            RedImageDownloader.downloadImage(url, "/Users/hzwanggaoping/picred/d/", fileName);
+            RedImageDownloader.downloadImage(url, "/Users/Maxuemin/d/", fileName);
             for(int j=0; j < page.locator("img[alt='已生成图片']").count();j++){
                 System.out.println("普通链接分别为：" + page.locator("img[alt='已生成图片']").nth(j).getAttribute("src"));
             }
@@ -295,7 +317,7 @@ public class BatchGPTTrans {
             File file = new File(picPath);
             // 获取文件名（包含文件类型）
             String fileName = file.getName();
-            RedImageDownloader.downloadImage(url, "/Users/hzwanggaoping/picred/d/", fileName);
+            RedImageDownloader.downloadImage(url, "/Users/Maxuemin/d/", fileName);
             for(int j=0; j < page.locator("span:has-text('Created with DALL·E')").count();j++){
                 System.out.println("降智的链接分别为：" + page.locator("div.relative.h-full > img").nth(j).getAttribute("src"));
             }
@@ -310,11 +332,18 @@ public class BatchGPTTrans {
             File file = new File(picPath);
             // 获取文件名（包含文件类型）
             String fileName = file.getName();
-            Files.write(Paths.get("/Users/hzwanggaoping/picred/d/"+fileName), page.context().request().get(page.locator("p>img").nth(0).getAttribute("src")).body());
-//            RedImageDownloader.downloadImage(url, "/Users/hzwanggaoping/picred/d/", fileName);
+            gFileName = fileName;
+            save(page, "p>img");
+            Thread.sleep(3000L);
+            save(page, "p>img");
+            Thread.sleep(13000L);
+            save(page, "p>img");
+            Thread.sleep(3000L);
+//
             for(int j=0; j < page.locator("p img").count();j++){
                 System.out.println("vip的链接分别为：" + page.locator("p img").nth(j).getAttribute("src"));
             }
+
         }else {
             // 截取全屏并保存（路径需存在）
             int v = new Random().nextInt(100000);
@@ -326,19 +355,28 @@ public class BatchGPTTrans {
             for(int j=0; j < page.locator("div img").count();j++){
                 System.out.println("没找到的img链接分别为：" + page.locator("div img").nth(j).getAttribute("src"));
             }
-//            // 定位图片元素
-//            ElementHandle image = page.querySelector("p>img");
-//            image.click(new ElementHandle.ClickOptions().setButton(MouseButton.RIGHT));
-//            page.keyboard().press("ArrowDown");
-//            page.keyboard().press("ArrowDown");
-//            page.keyboard().press("Enter");
-//
-//            // 等待下载完成
-//            Download download = page.waitForDownload(() -> {});
-//            download.saveAs(Paths.get("downloads/saved_image.png"));
         }
 
     }
+
+    public static void save(Page page, String selector) throws InterruptedException {
+        // 启用下载监听
+        page.click("text='点击这里'");
+        if(page.locator("text='点击这里'").count() != 1){
+            System.out.println("error error,这里找不到元素");
+        }
+        Thread.sleep(5000L);
+//        // 找到图片元素并右键点击（触发下载逻辑）
+//        ElementHandle img = page.querySelector(selector);
+//        img.click(new ElementHandle.ClickOptions().setButton(MouseButton.RIGHT));
+//
+//        // 发送键盘事件选择 "另存为"（需根据浏览器语言调整）
+//        page.keyboard().press("v"); // Chrome 中 "v" 对应 "另存为" 快捷键
+//
+//        // 等待下载完成
+//        page.waitForTimeout(5000);
+    }
+
 
     public static void clickElement(Page page, String selector){
         Locator svgLocator = page.locator(selector).nth(0);
