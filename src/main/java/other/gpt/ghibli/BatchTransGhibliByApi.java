@@ -70,7 +70,7 @@ public class BatchTransGhibliByApi {
 //        System.out.println("图片 URL: " + imageUrl);
         long startTime = new Date().getTime();
         try {
-            String url = TransImgByGptAPI.createImageWithOpenAIClient(imageUrl, prompt);
+            String url = TransImgByGptAPI.createImageWithOpenAIClient(imageUrl, prompt, true);
             File file = new File(fileAbsolutePath);
             // 获取文件名（包含文件类型）
             String fileName = file.getName();

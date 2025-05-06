@@ -2,6 +2,7 @@ package other.common;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import netease.util.JsonUtil;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -22,12 +23,12 @@ import java.util.regex.Pattern;
 public class TransImgByGptAPI {
 
     // API 配置
-    private static final String API_KEY = "sk-1j3RHjHfwSsshuivoMEjYb6sUT9s0cbe6NBxbL5YjsRjR0xsy333";
+    private static final String API_KEY = "sk-1j3RHjHfwSsshuivoMEjYb6sUT9s0cbe6NBxbL5YjsRjR0xsy1";
     private static final String BASE_URL = "https://aihubmax.com/v1";
-    private static final String MODEL = "gpt-4o-image";
+    private static final String MODEL = "gpt-4o-image-vip"; //  gpt-4o-image    gpt-4o-image-vip  o3
     private static final String ENDPOINT = BASE_URL + "/chat/completions";
 
-    public static String createImageWithOpenAIClient(String imageUrl, String prompt) throws IOException {
+    public static String createImageWithOpenAIClient(String imageUrl, String prompt, boolean update) throws IOException {
         System.out.println("使用 OpenAI 客户端方法调用 API...");
         System.out.println("图片 URL: " + imageUrl);
 
@@ -54,17 +55,18 @@ public class TransImgByGptAPI {
             textContent.addProperty("type", "text");
             textContent.addProperty("text", prompt);
             content.add(textContent);
+            if(update){
 
-            // 图片部分
-            JsonObject imageContent = new JsonObject();
-            imageContent.addProperty("type", "image_url");
+                // 图片部分
+                JsonObject imageContent = new JsonObject();
+                imageContent.addProperty("type", "image_url");
 
-            JsonObject imageUrlObj = new JsonObject();
-            imageUrlObj.addProperty("url", imageUrl);
+                JsonObject imageUrlObj = new JsonObject();
+                imageUrlObj.addProperty("url", imageUrl);
 
-            imageContent.add("image_url", imageUrlObj);
-            content.add(imageContent);
-
+                imageContent.add("image_url", imageUrlObj);
+                content.add(imageContent);
+            }
             message.add("content", content);
             messages.add(message);
             requestBody.add("messages", messages);
@@ -75,6 +77,7 @@ public class TransImgByGptAPI {
             try (CloseableHttpResponse response = httpClient.execute(httpPost)) {
                 int statusCode = response.getStatusLine().getStatusCode();
                 if (statusCode != 200) {
+                    System.out.println(JsonUtil.toJson(response));
                     throw new IOException("API请求失败: " + statusCode + " " + response.getStatusLine().getReasonPhrase());
                 }
 
@@ -123,7 +126,7 @@ public class TransImgByGptAPI {
         System.out.println("图片 URL: " + imageUrl);
         long startTime = new Date().getTime();
         try {
-            String result = createImageWithOpenAIClient(imageUrl, prompt);
+            String result = createImageWithOpenAIClient(imageUrl, prompt, true);
             if(!result.contains("点击下载")){
                 System.out.println("生成失败： " + result);
                 throw new RuntimeException("失败");
