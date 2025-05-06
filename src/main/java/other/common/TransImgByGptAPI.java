@@ -25,7 +25,7 @@ public class TransImgByGptAPI {
     // API 配置
     private static final String API_KEY = "sk-1j3RHjHfwSsshuivoMEjYb6sUT9s0cbe6NBxbL5YjsRjR0xsy1";
     private static final String BASE_URL = "https://aihubmax.com/v1";
-    private static final String MODEL = "gpt-4o-image-vip"; //  gpt-4o-image    gpt-4o-image-vip  o3
+    private static final String MODEL = "gpt-4o-image"; //  gpt-4o-image    gpt-4o-image-vip  o3
     private static final String ENDPOINT = BASE_URL + "/chat/completions";
 
     public static String createImageWithOpenAIClient(String imageUrl, String prompt, boolean update) throws IOException {
