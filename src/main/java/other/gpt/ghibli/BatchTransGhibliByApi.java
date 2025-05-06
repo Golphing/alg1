@@ -1,6 +1,5 @@
 package other.gpt.ghibli;
 
-import com.microsoft.playwright.Playwright;
 import other.common.DownloadGptResultImg;
 import other.common.ImageUploaderToCloud;
 import other.common.TransImgByGptAPI;
