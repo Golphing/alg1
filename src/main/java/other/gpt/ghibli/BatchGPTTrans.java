@@ -154,6 +154,7 @@ public class BatchGPTTrans {
                 // 检查文件在目标文件夹中是否存在
                 if (targetFile.exists()) {
                                 System.out.println("文件 " + gFileName + " 存在于目标文件夹中。不下载");
+                                return;
                 }
                 download.saveAs(Paths.get("/Users/Maxuemin/d/",gFileName));
             });
@@ -339,6 +340,12 @@ public class BatchGPTTrans {
             Thread.sleep(13000L);
             save(page, "p>img");
             Thread.sleep(3000L);
+            save(page, "p>img");
+            Thread.sleep(3000L);
+            save(page, "p>img");
+            Thread.sleep(3000L);
+            save(page, "");
+            Thread.sleep(30000L);
 //
             for(int j=0; j < page.locator("p img").count();j++){
                 System.out.println("vip的链接分别为：" + page.locator("p img").nth(j).getAttribute("src"));

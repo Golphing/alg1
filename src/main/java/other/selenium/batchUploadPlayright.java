@@ -39,7 +39,7 @@ public class batchUploadPlayright {
             // 批量上传逻辑
             try {
                 // 歌曲
-//                CommonUtil.batchUploadp(page, "","/Users/hzwanggaoping/Documents/古诗词-一年级上/", "8090", intro, 50);
+                CommonUtil.batchUploadp(page, "","/Users/Maxuemin/Desktop/englishout/上传/光良", "8090", intro, 5);
 
                 // 童话
                 CommonUtil.batchUploadp(page, "", "/Users/Maxuemin/Desktop/englishout/上传/爸爸妈妈讲睡前十分钟故事77首333M/妈妈讲的睡前十分钟故事1", "格林童话", intro, 3);
