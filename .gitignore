@@ -3,6 +3,7 @@
 .idea/
 # Log file
 *.log
+*.json
 
 # BlueJ files
 *.ctxt
@@ -51,3 +52,5 @@ manager/pom.xml.versionsBackup
 service/pom.xml.versionsBackup
 
 **/upgrade-log/
+cookies.json
+dowloads/
